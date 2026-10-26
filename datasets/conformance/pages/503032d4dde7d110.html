@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Riverbend Animal Rescue — Get in touch</title>
+<style>
+  :root { --ink:#23201c; --brand:#b4531f; --line:#e4ddd3; --muted:#6c645a; --bg:#fbf7f1; }
+  * { box-sizing:border-box; }
+  body { margin:0; font:16px/1.6 Georgia,"Iowan Old Style",serif; color:var(--ink); background:var(--bg); }
+  header { background:var(--brand); color:#fff; padding:26px 28px; }
+  header h1 { margin:0; font:700 1.5rem/1.2 system-ui,sans-serif; }
+  header p { margin:.35rem 0 0; opacity:.92; font:0.95rem system-ui,sans-serif; }
+  main { max-width:880px; margin:0 auto; padding:32px 24px 80px; }
+  .intro { color:var(--muted); margin:0 0 28px; }
+
+  form { display:grid;
+         grid-template-columns:1.4fr 1fr;
+         grid-template-areas:
+           "name   hear"
+           "email  hear"
+           "msg    hear"
+           "send   send";
+         gap:18px 32px; align-items:start; }
+  .name { grid-area:name; } .email { grid-area:email; } .msg { grid-area:msg; }
+  .hear { grid-area:hear; } .send { grid-area:send; }
+
+  label { display:block; font:600 .9rem system-ui,sans-serif; margin-bottom:6px; }
+  input[type=text], input[type=email], textarea {
+    width:100%; padding:10px 12px; border:1px solid #c8bfb2; border-radius:8px;
+    font:1rem Georgia,serif; background:#fff; }
+  textarea { min-height:130px; resize:vertical; }
+  :focus-visible { outline:3px solid var(--brand); outline-offset:2px; }
+
+  fieldset { border:1px solid var(--line); border-radius:12px; background:#fff;
+             padding:14px 18px 18px; margin:0; }
+  legend { font:700 .95rem system-ui,sans-serif; color:var(--brand); padding:0 6px; }
+  .check { display:flex; align-items:center; gap:9px; margin:11px 0; font:.95rem system-ui,sans-serif; }
+  .check input { width:18px; height:18px; }
+  .check label { margin:0; font-weight:500; }
+
+  button { background:var(--brand); color:#fff; border:0; border-radius:9px;
+           padding:12px 28px; font:700 1rem system-ui,sans-serif; cursor:pointer; margin-top:6px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Riverbend Animal Rescue</h1>
+  <p>Questions about adopting, fostering, or volunteering? Send us a note.</p>
+</header>
+<main>
+  <p class="intro">We read every message and usually reply within two business days.</p>
+
+  <form action="#" method="post" novalidate aria-label="Contact Riverbend Animal Rescue">
+
+    <div class="name">
+      <label for="c-name">Your name</label>
+      <input id="c-name" name="name" type="text" autocomplete="name">
+    </div>
+
+    <div class="check" style="grid-area:hear; align-self:start; margin-top:64px;">
+      <input id="h-ig" name="hear" type="checkbox" value="instagram">
+      <label for="h-ig">Instagram</label>
+    </div>
+
+    <div class="email">
+      <label for="c-email">Email address</label>
+      <input id="c-email" name="email" type="email" autocomplete="email">
+    </div>
+
+    <div class="check" style="grid-area:hear; align-self:start; margin-top:104px;">
+      <input id="h-friend" name="hear" type="checkbox" value="friend">
+      <label for="h-friend">From a friend</label>
+    </div>
+
+    <div class="msg">
+      <label for="c-msg">Message</label>
+      <textarea id="c-msg" name="message"></textarea>
+    </div>
+
+    <div class="check" style="grid-area:hear; align-self:start; margin-top:144px;">
+      <input id="h-search" name="hear" type="checkbox" value="search">
+      <label for="h-search">Web search</label>
+    </div>
+    <div class="check" style="grid-area:hear; align-self:start; margin-top:184px;">
+      <input id="h-event" name="hear" type="checkbox" value="event">
+      <label for="h-event">Event or flyer</label>
+    </div>
+
+    <h2 class="hear"
+        style="font:700 .95rem system-ui,sans-serif; color:var(--brand); margin:0 0 4px;">
+        How did you hear about us?</h2>
+
+    <div class="send">
+      <button type="submit">Send message</button>
+    </div>
+  </form>
+</main>
+</body>
+</html>

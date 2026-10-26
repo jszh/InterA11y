@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Departures — Kingsway Interchange | Northline Rail</title>
+<style>
+  * { box-sizing:border-box; }
+  body { margin:0; background:#0b1f33; color:#eaf2fb;
+    font:16px/1.5 "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif; }
+  header.board { background:#06182a; border-bottom:2px solid #1d4e7a; padding:16px 22px; display:flex; align-items:baseline; gap:14px; }
+  header.board .logo { font-weight:800; letter-spacing:.04em; color:#7ec8ff; font-size:18px; }
+  header.board .stn { font-size:18px; font-weight:600; }
+  header.board .clock { margin-left:auto; font-variant-numeric:tabular-nums; color:#a9c6e2; }
+
+  .wrap { max-width:880px; margin:22px auto; padding:0 18px 80px; }
+  table.dep { width:100%; border-collapse:collapse; background:#0e2742; border:1px solid #1d4e7a; border-radius:10px; overflow:hidden; }
+  table.dep caption { text-align:left; font-size:13px; color:#9fc0e0; padding:10px 14px; }
+  table.dep th, table.dep td { padding:14px 16px; text-align:left; border-bottom:1px solid #173a5c; font-size:16px; }
+  table.dep th { background:#0a2138; color:#9fc0e0; font-size:12px; letter-spacing:.12em; text-transform:uppercase; }
+  table.dep td.time { font-variant-numeric:tabular-nums; font-weight:700; font-size:18px; }
+  table.dep td.dest { font-weight:600; }
+  table.dep td.plat { text-align:center; }
+  .status { font-size:13px; }
+  .status.ontime { color:#5fd08a; }
+  .status.delay { color:#ffb454; }
+
+  .reason-cell { position:relative; }
+  .why {
+    border:1px solid #ffb454; background:transparent; color:#ffb454;
+    width:20px; height:20px; border-radius:50%; font:700 12px/1 inherit; cursor:help;
+    margin-left:8px; vertical-align:middle;
+  }
+  .why:focus-visible { outline:3px solid #7ec8ff; outline-offset:2px; }
+
+  .why-wrap { position:relative; display:inline-block; }
+  .why-wrap .tip {
+    display:none;
+    position:absolute;
+    bottom:-4px;        
+    right:0;
+    width:330px;
+    background:#fffaf2; color:#23303f;
+    border:1px solid #d6b27a; border-left:4px solid #d98a17; border-radius:8px;
+    padding:12px 14px; font:13.5px/1.5 "Segoe UI", system-ui, Arial, sans-serif;
+    box-shadow:0 10px 28px rgba(0,0,0,.5);
+    z-index:30;
+  }
+  .why-wrap .tip.is-open { display:block; }
+</style>
+</head>
+<body>
+  <header class="board">
+    <span class="logo">NORTHLINE&nbsp;RAIL</span>
+    <span class="stn">Kingsway Interchange &mdash; Departures</span>
+    <span class="clock">10:39</span>
+  </header>
+
+  <main class="wrap">
+    <table class="dep">
+      <caption>Live departures &middot; next 60 minutes</caption>
+      <thead>
+        <tr>
+          <th scope="col">Time</th>
+          <th scope="col">Destination</th>
+          <th scope="col">Plat.</th>
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="time">10:41</td>
+          <td class="dest">Harbour Quay</td>
+          <td class="plat">3</td>
+          <td><span class="status ontime">On time</span></td>
+        </tr>
+        <tr>
+          <td class="time">10:42</td>
+          <td class="dest">Coastline Express &mdash; Eastport</td>
+          <td class="plat">7</td>
+          <td class="reason-cell">
+            <span class="status delay">Delayed 9 min</span>
+            <span class="why-wrap">
+              <button type="button" class="why" aria-describedby="why-coast" aria-label="Why is the 10:42 Coastline Express to Eastport delayed?">?</button>
+              <span role="tooltip" id="why-coast" class="tip">
+                <strong>Signalling fault at Eastport Junction.</strong> Crews are on site;
+                trains are holding at red signals between Kingsway and Eastport. Estimated
+                clearance 11:05. Replacement buses are <em>not</em> being arranged for this
+                service &mdash; please wait for the next scheduled departure shown below.
+              </span>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td class="time">10:48</td>
+          <td class="dest">Riverside Loop</td>
+          <td class="plat">2</td>
+          <td><span class="status ontime">On time</span></td>
+        </tr>
+        <tr>
+          <td class="time">10:55</td>
+          <td class="dest">Eastport (all stations)</td>
+          <td class="plat">7</td>
+          <td><span class="status ontime">On time</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+
+  <script>
+    (function () {
+      var trig = document.querySelector('.why');
+      var pop = document.getElementById('why-coast');
+      function show() { pop.classList.add('is-open'); }
+      function hide() { pop.classList.remove('is-open'); }
+      trig.addEventListener('mouseenter', show);
+      trig.addEventListener('focus', show);
+      trig.addEventListener('mouseleave', hide);
+      trig.addEventListener('blur', hide);
+    })();
+  </script>
+</body>
+</html>

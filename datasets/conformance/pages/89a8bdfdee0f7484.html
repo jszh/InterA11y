@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Platform status — Quanta Cloud</title>
+<style>
+  body { margin:0; font:14px/1.5 ui-monospace,"SF Mono",Menlo,Consolas,monospace; color:#e6e8ee; background:#0f1117; }
+  .console { max-width:760px; margin:0 auto; padding:30px 22px 70px; }
+  h1 { font-family:-apple-system,Segoe UI,Roboto,sans-serif; font-size:20px; margin:0 0 4px; color:#fff; }
+  .sub { color:#8a909c; margin:0 0 24px; }
+  h2 { font-family:-apple-system,Segoe UI,Roboto,sans-serif; font-size:13px; text-transform:uppercase;
+       letter-spacing:.08em; color:#8a909c; margin:28px 0 10px; }
+  .grid { width:100%; border-collapse:collapse; }
+  .grid th, .grid td { text-align:left; padding:10px 12px; border-bottom:1px solid #1d212b; }
+  .grid thead th { color:#8a909c; font-weight:600; }
+  .svc { font-family:-apple-system,Segoe UI,Roboto,sans-serif; }
+  .dot { display:inline-block; width:13px; height:13px; border-radius:50%; vertical-align:middle; }
+  .op   { background:#3fbf63; }
+  .deg  { background:#e0a02e; }
+  .down { background:#e0503e; }
+  .legend { margin:10px 0 0; color:#8a909c; font-size:13px; }
+  .legend .dot { margin:0 4px 0 12px; }
+
+  .inc { display:flex; align-items:center; gap:10px; padding:9px 0; border-bottom:1px solid #1d212b; }
+  .badge { font-family:-apple-system,Segoe UI,Roboto,sans-serif; font-size:12px; font-weight:700;
+           padding:2px 8px; border-radius:5px; letter-spacing:.02em; }
+  .badge.deg  { background:#3a2e10; color:#f4c462; }
+  .badge.down { background:#3a1714; color:#f3897a; }
+  .inc .what { color:#c7ccd6; }
+</style>
+</head>
+<body>
+<main class="console">
+  <h1>Quanta Cloud — platform status</h1>
+  <p class="sub">Live as of 2026-06-20 09:14 UTC &middot; auto-refresh 60s</p>
+
+  <h2>Region health</h2>
+  <table class="grid">
+    <thead><tr><th scope="col">Region</th><th scope="col">Compute</th><th scope="col">Storage</th><th scope="col">Network</th></tr></thead>
+    <tbody>
+      <tr><td class="svc">us-east-1</td><td><span class="dot op"></span></td><td><span class="dot op"></span></td><td><span class="dot deg"></span></td></tr>
+      <tr><td class="svc">us-west-2</td><td><span class="dot op"></span></td><td><span class="dot op"></span></td><td><span class="dot op"></span></td></tr>
+      <tr><td class="svc">eu-central-1</td><td><span class="dot deg"></span></td><td><span class="dot op"></span></td><td><span class="dot op"></span></td></tr>
+      <tr><td class="svc">ap-south-1</td><td><span class="dot down"></span></td><td><span class="dot deg"></span></td><td><span class="dot op"></span></td></tr>
+    </tbody>
+  </table>
+  <p class="legend">
+    <span class="dot op"></span>operational
+    <span class="dot deg"></span>degraded
+    <span class="dot down"></span>major outage
+  </p>
+
+  <h2>Active incidents</h2>
+  <div class="inc"><span class="dot down"></span><span class="badge down">MAJOR OUTAGE</span>
+    <span class="what">ap-south-1 Compute — instances failing to launch (since 08:47)</span></div>
+  <div class="inc"><span class="dot deg"></span><span class="badge deg">DEGRADED</span>
+    <span class="what">eu-central-1 Compute — elevated API latency</span></div>
+  <div class="inc"><span class="dot deg"></span><span class="badge deg">DEGRADED</span>
+    <span class="what">us-east-1 Network — packet loss in one AZ</span></div>
+</main>
+
+</body>
+</html>

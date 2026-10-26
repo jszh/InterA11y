@@ -1,0 +1,231 @@
+{
+  "schema": "intera11y-tools/1",
+  "tools": [
+    {
+      "id": "alfa",
+      "name": "Alfa",
+      "family": "rule-based",
+      "source": "https://github.com/Siteimprove/alfa",
+      "license": "MIT",
+      "packages": {
+        "@siteimprove/alfa-rules": "0.117.0",
+        "@siteimprove/alfa-act": "0.117.0",
+        "@siteimprove/alfa-dom": "0.117.0",
+        "@siteimprove/alfa-puppeteer": "0.84.0"
+      },
+      "conditions": [
+        "default"
+      ]
+    },
+    {
+      "id": "aslint",
+      "name": "ASLint",
+      "family": "rule-based",
+      "source": "https://github.com/essentialaccessibility/aslint",
+      "license": "MPL-2.0",
+      "packages": {
+        "@essentialaccessibility/aslint": "0.0.58"
+      },
+      "conditions": [
+        "default"
+      ]
+    },
+    {
+      "id": "axe",
+      "name": "axe-core",
+      "family": "rule-based",
+      "source": "https://github.com/dequelabs/axe-core",
+      "license": "MPL-2.0",
+      "packages": {
+        "axe-core": "4.12.1"
+      },
+      "conditions": [
+        "default"
+      ]
+    },
+    {
+      "id": "bagel",
+      "name": "BAGEL",
+      "family": "rule-based",
+      "source": "https://doi.org/10.1145/3544548.3580749",
+      "license": "GPL-3.0-only",
+      "packages": {},
+      "implementation": "Independent paper-based implementation; not original BAGEL source.",
+      "redistributed": true,
+      "conditions": [
+        "default"
+      ]
+    },
+    {
+      "id": "ed11y",
+      "name": "Editoria11y",
+      "family": "rule-based",
+      "source": "https://github.com/itmaybejj/editoria11y",
+      "license": "GPL-2.0",
+      "packages": {},
+      "commit": "4e45492166d641a920d9caa8c550eb303ab7b1e0",
+      "externalPathEnv": "EDITORIA11Y_HOME",
+      "redistributed": false,
+      "version": "3.0.2",
+      "conditions": [
+        "default"
+      ]
+    },
+    {
+      "id": "htmlcs",
+      "name": "HTML_CodeSniffer",
+      "family": "rule-based",
+      "source": "https://github.com/squizlabs/HTML_CodeSniffer",
+      "license": "BSD-3-Clause",
+      "packages": {
+        "html_codesniffer": "2.5.1"
+      },
+      "conditions": [
+        "default"
+      ]
+    },
+    {
+      "id": "ibm",
+      "name": "IBM Equal Access",
+      "family": "rule-based",
+      "source": "https://github.com/IBMa/equal-access",
+      "license": "Apache-2.0",
+      "packages": {
+        "accessibility-checker": "4.0.26"
+      },
+      "conditions": [
+        "default"
+      ]
+    },
+    {
+      "id": "lynx",
+      "name": "LYNX",
+      "family": "rule-based",
+      "source": "https://github.com/USC-SQL/NavigationDetection",
+      "license": null,
+      "packages": {},
+      "commit": "648b263e0bc4009e378bab52955b021c6c295933",
+      "externalPathEnv": "LYNX_HOME",
+      "redistributed": false,
+      "conditions": [
+        "default"
+      ]
+    },
+    {
+      "id": "nuval",
+      "name": "Nu Html Checker",
+      "family": "rule-based",
+      "source": "https://github.com/validator/validator",
+      "license": "MIT",
+      "packages": {
+        "vnu-jar": "26.10.12"
+      },
+      "conditions": [
+        "default"
+      ]
+    },
+    {
+      "id": "qualweb",
+      "name": "QualWeb",
+      "family": "rule-based",
+      "source": "https://github.com/qualweb/qualweb",
+      "license": "ISC",
+      "packages": {
+        "@qualweb/core": "0.8.11",
+        "@qualweb/act-rules": "0.8.0",
+        "@qualweb/wcag-techniques": "0.4.7"
+      },
+      "conditions": [
+        "default"
+      ]
+    },
+    {
+      "id": "testaro",
+      "name": "Testaro",
+      "family": "rule-based",
+      "source": "https://github.com/cvs-health/testaro",
+      "license": "MIT",
+      "packages": {},
+      "commit": "7c962af1d4e566e1a0a4bbe5b9396c1fbd491d59",
+      "version": "58.0.6",
+      "redistributed": true,
+      "conditions": [
+        "default"
+      ]
+    },
+    {
+      "id": "gena11y",
+      "name": "GenA11y",
+      "family": "llm-driven",
+      "source": "https://github.com/seal-hub/GenA11y",
+      "license": "GPL-3.0-only",
+      "packages": {},
+      "conditions": [
+        "default"
+      ]
+    },
+    {
+      "id": "accessguru",
+      "name": "AccessGuru",
+      "family": "llm-driven",
+      "source": "https://github.com/NadeenAhmad/AccessGuruLLM",
+      "license": "MIT",
+      "packages": {
+        "axe-core": "4.12.1"
+      },
+      "conditions": [
+        "default"
+      ]
+    },
+    {
+      "id": "lopez-pereira",
+      "name": "L\u00f3pez-Gil and Pereira",
+      "family": "llm-driven",
+      "source": "https://doi.org/10.1016/j.infsof.2026.108215",
+      "license": "MIT",
+      "packages": {},
+      "conditions": [
+        "default"
+      ]
+    },
+    {
+      "id": "browser-use",
+      "name": "Browser Use",
+      "family": "agentic",
+      "source": "https://github.com/browser-use/browser-use",
+      "license": "MIT",
+      "packages": {
+        "browser-use": "0.12.6"
+      },
+      "conditions": [
+        "general-tools",
+        "intera11y-tools"
+      ]
+    },
+    {
+      "id": "agentlab",
+      "name": "AgentLab",
+      "family": "agentic",
+      "source": "https://github.com/ServiceNow/AgentLab",
+      "license": "Apache-2.0",
+      "packages": {
+        "agentlab": "0.4.2"
+      },
+      "conditions": [
+        "general-tools",
+        "intera11y-tools"
+      ]
+    },
+    {
+      "id": "ia-rubrics",
+      "name": "InterA11y (Rubrics only)",
+      "family": "ablation",
+      "source": null,
+      "license": "GPL-3.0-only",
+      "packages": {},
+      "conditions": [
+        "default"
+      ]
+    }
+  ]
+}

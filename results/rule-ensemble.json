@@ -1,0 +1,829 @@
+{
+  "family": "monotone-rules",
+  "terms": [
+    {
+      "sc": "2.4.7",
+      "allOf": [
+        [
+          "qualweb",
+          "QW-WCAG-T24"
+        ],
+        [
+          "testaro",
+          "focInd"
+        ]
+      ]
+    },
+    {
+      "sc": "2.4.7",
+      "allOf": [
+        [
+          "bagel",
+          "adjacentContrast"
+        ],
+        [
+          "bagel",
+          "contrastingArea"
+        ],
+        [
+          "bagel",
+          "minimumArea"
+        ],
+        [
+          "testaro",
+          "focInd"
+        ]
+      ]
+    },
+    {
+      "sc": "2.4.4",
+      "allOf": [
+        [
+          "testaro",
+          "linkAmb"
+        ]
+      ]
+    },
+    {
+      "sc": "2.4.4",
+      "allOf": [
+        [
+          "ed11y",
+          "LINK_UNPRONOUNCEABLE"
+        ]
+      ]
+    },
+    {
+      "sc": "2.4.4",
+      "allOf": [
+        [
+          "aslint",
+          "link_with_unclear_purpose"
+        ]
+      ]
+    },
+    {
+      "sc": "2.4.4",
+      "allOf": [
+        [
+          "alfa",
+          "sia-r11"
+        ],
+        [
+          "axe",
+          "link-name"
+        ],
+        [
+          "ibm",
+          "a_text_purpose"
+        ],
+        [
+          "qualweb",
+          "QW-ACT-R12"
+        ],
+        [
+          "qualweb",
+          "QW-WCAG-T21"
+        ]
+      ]
+    },
+    {
+      "sc": "2.4.4",
+      "allOf": [
+        [
+          "alfa",
+          "sia-r11"
+        ],
+        [
+          "axe",
+          "link-name"
+        ],
+        [
+          "ed11y",
+          "LINK_EMPTY"
+        ],
+        [
+          "ibm",
+          "a_text_purpose"
+        ],
+        [
+          "qualweb",
+          "QW-ACT-R12"
+        ]
+      ]
+    },
+    {
+      "sc": "2.4.4",
+      "allOf": [
+        [
+          "alfa",
+          "sia-r11"
+        ],
+        [
+          "axe",
+          "area-alt"
+        ],
+        [
+          "ibm",
+          "a_text_purpose"
+        ],
+        [
+          "qualweb",
+          "QW-WCAG-T1"
+        ]
+      ]
+    },
+    {
+      "sc": "2.4.3",
+      "allOf": [
+        [
+          "lynx",
+          "Top"
+        ]
+      ]
+    },
+    {
+      "sc": "2.4.3",
+      "allOf": [
+        [
+          "lynx",
+          "ReEnter"
+        ]
+      ]
+    },
+    {
+      "sc": "2.4.3",
+      "allOf": [
+        [
+          "aslint",
+          "positive_tabindex"
+        ]
+      ]
+    },
+    {
+      "sc": "2.1.1",
+      "allOf": [
+        [
+          "alfa",
+          "sia-r95"
+        ],
+        [
+          "ed11y",
+          "EMBED_UNFOCUSABLE"
+        ],
+        [
+          "ibm",
+          "iframe_interactive_tabbable"
+        ],
+        [
+          "qualweb",
+          "QW-ACT-R70"
+        ],
+        [
+          "qualweb",
+          "QW-WCAG-T24"
+        ],
+        [
+          "testaro",
+          "opFoc"
+        ]
+      ]
+    },
+    {
+      "sc": "2.1.1",
+      "allOf": [
+        [
+          "alfa",
+          "sia-r84"
+        ],
+        [
+          "axe",
+          "scrollable-region-focusable"
+        ],
+        [
+          "qualweb",
+          "QW-ACT-R43"
+        ],
+        [
+          "testaro",
+          "focAll"
+        ]
+      ]
+    },
+    {
+      "sc": "1.4.1",
+      "allOf": [
+        [
+          "axe",
+          "link-in-text-block"
+        ]
+      ]
+    },
+    {
+      "sc": "1.1.1",
+      "allOf": [
+        [
+          "qualweb",
+          "QW-WCAG-T8"
+        ],
+        [
+          "testaro",
+          "altScheme"
+        ]
+      ]
+    },
+    {
+      "sc": "1.1.1",
+      "allOf": [
+        [
+          "ibm",
+          "img_alt_decorative"
+        ]
+      ]
+    },
+    {
+      "sc": "1.1.1",
+      "allOf": [
+        [
+          "aslint",
+          "alt_text_include_filename"
+        ],
+        [
+          "qualweb",
+          "QW-WCAG-T8"
+        ]
+      ]
+    },
+    {
+      "sc": "1.1.1",
+      "allOf": [
+        [
+          "alfa",
+          "sia-r63"
+        ],
+        [
+          "axe",
+          "object-alt"
+        ],
+        [
+          "ibm",
+          "object_text_exists"
+        ],
+        [
+          "qualweb",
+          "QW-ACT-R42"
+        ]
+      ]
+    },
+    {
+      "sc": "1.1.1",
+      "allOf": [
+        [
+          "alfa",
+          "sia-r43"
+        ],
+        [
+          "axe",
+          "svg-img-alt"
+        ],
+        [
+          "ed11y",
+          "MISSING_ALT"
+        ],
+        [
+          "qualweb",
+          "QW-ACT-R17"
+        ],
+        [
+          "qualweb",
+          "QW-ACT-R21"
+        ]
+      ]
+    },
+    {
+      "sc": "1.1.1",
+      "allOf": [
+        [
+          "alfa",
+          "sia-r43"
+        ],
+        [
+          "aslint",
+          "accessible_svg"
+        ],
+        [
+          "axe",
+          "svg-img-alt"
+        ],
+        [
+          "ed11y",
+          "MISSING_ALT"
+        ],
+        [
+          "ibm",
+          "svg_graphics_labelled"
+        ],
+        [
+          "qualweb",
+          "QW-ACT-R21"
+        ]
+      ]
+    },
+    {
+      "sc": "1.1.1",
+      "allOf": [
+        [
+          "alfa",
+          "sia-r28"
+        ],
+        [
+          "aslint",
+          "input_image_missing_alt"
+        ],
+        [
+          "axe",
+          "input-image-alt"
+        ],
+        [
+          "htmlcs",
+          "WCAG2AA.Principle1.Guideline1_1.1_1_1.H36"
+        ],
+        [
+          "qualweb",
+          "QW-ACT-R6"
+        ],
+        [
+          "qualweb",
+          "QW-WCAG-T5"
+        ]
+      ]
+    },
+    {
+      "sc": "1.1.1",
+      "allOf": [
+        [
+          "alfa",
+          "sia-r2"
+        ],
+        [
+          "axe",
+          "role-img-alt"
+        ],
+        [
+          "ed11y",
+          "MISSING_ALT"
+        ],
+        [
+          "qualweb",
+          "QW-ACT-R17"
+        ]
+      ]
+    },
+    {
+      "sc": "1.1.1",
+      "allOf": [
+        [
+          "alfa",
+          "sia-r2"
+        ],
+        [
+          "axe",
+          "image-alt"
+        ],
+        [
+          "ed11y",
+          "MISSING_ALT"
+        ],
+        [
+          "htmlcs",
+          "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37"
+        ],
+        [
+          "ibm",
+          "img_alt_valid"
+        ],
+        [
+          "nuval",
+          "imageNoText"
+        ],
+        [
+          "qualweb",
+          "QW-ACT-R17"
+        ]
+      ]
+    },
+    {
+      "sc": "1.1.1",
+      "allOf": [
+        [
+          "alfa",
+          "sia-r2"
+        ],
+        [
+          "axe",
+          "image-alt"
+        ],
+        [
+          "ed11y",
+          "ALT_UNPRONOUNCEABLE"
+        ],
+        [
+          "ibm",
+          "img_alt_valid"
+        ],
+        [
+          "qualweb",
+          "QW-ACT-R17"
+        ]
+      ]
+    },
+    {
+      "sc": "1.1.1",
+      "allOf": [
+        [
+          "alfa",
+          "sia-r2"
+        ],
+        [
+          "alfa",
+          "sia-r67"
+        ],
+        [
+          "axe",
+          "image-alt"
+        ],
+        [
+          "htmlcs",
+          "WCAG2AA.Principle1.Guideline1_1.1_1_1.H37"
+        ],
+        [
+          "ibm",
+          "img_alt_valid"
+        ],
+        [
+          "nuval",
+          "imageNoText"
+        ],
+        [
+          "qualweb",
+          "QW-ACT-R17"
+        ]
+      ]
+    },
+    {
+      "sc": "1.1.1",
+      "allOf": [
+        [
+          "alfa",
+          "sia-r2"
+        ]
+      ]
+    },
+    {
+      "sc": "1.1.1",
+      "allOf": [
+        [
+          "alfa",
+          "sia-r28"
+        ]
+      ]
+    },
+    {
+      "sc": "1.1.1",
+      "allOf": [
+        [
+          "alfa",
+          "sia-r43"
+        ]
+      ]
+    },
+    {
+      "sc": "1.1.1",
+      "allOf": [
+        [
+          "alfa",
+          "sia-r63"
+        ]
+      ]
+    },
+    {
+      "sc": "1.1.1",
+      "allOf": [
+        [
+          "axe",
+          "image-alt"
+        ]
+      ]
+    },
+    {
+      "sc": "1.1.1",
+      "allOf": [
+        [
+          "axe",
+          "input-image-alt"
+        ]
+      ]
+    },
+    {
+      "sc": "1.1.1",
+      "allOf": [
+        [
+          "axe",
+          "object-alt"
+        ]
+      ]
+    },
+    {
+      "sc": "1.1.1",
+      "allOf": [
+        [
+          "axe",
+          "role-img-alt"
+        ]
+      ]
+    },
+    {
+      "sc": "1.1.1",
+      "allOf": [
+        [
+          "axe",
+          "svg-img-alt"
+        ]
+      ]
+    },
+    {
+      "sc": "1.1.1",
+      "allOf": [
+        [
+          "ed11y",
+          "ALT_UNPRONOUNCEABLE"
+        ]
+      ]
+    },
+    {
+      "sc": "1.1.1",
+      "allOf": [
+        [
+          "ibm",
+          "imagebutton_alt_exists"
+        ]
+      ]
+    },
+    {
+      "sc": "1.1.1",
+      "allOf": [
+        [
+          "ibm",
+          "img_alt_valid"
+        ]
+      ]
+    },
+    {
+      "sc": "1.1.1",
+      "allOf": [
+        [
+          "ibm",
+          "object_text_exists"
+        ]
+      ]
+    },
+    {
+      "sc": "1.1.1",
+      "allOf": [
+        [
+          "qualweb",
+          "QW-ACT-R42"
+        ]
+      ]
+    },
+    {
+      "sc": "1.1.1",
+      "allOf": [
+        [
+          "qualweb",
+          "QW-ACT-R6"
+        ]
+      ]
+    },
+    {
+      "sc": "1.1.1",
+      "allOf": [
+        [
+          "qualweb",
+          "QW-WCAG-T8"
+        ]
+      ]
+    },
+    {
+      "sc": "1.4.1",
+      "allOf": [
+        [
+          "alfa",
+          "sia-r62"
+        ]
+      ]
+    },
+    {
+      "sc": "2.1.1",
+      "allOf": [
+        [
+          "axe",
+          "scrollable-region-focusable"
+        ]
+      ]
+    },
+    {
+      "sc": "2.1.1",
+      "allOf": [
+        [
+          "qualweb",
+          "QW-ACT-R43"
+        ]
+      ]
+    },
+    {
+      "sc": "2.1.1",
+      "allOf": [
+        [
+          "qualweb",
+          "QW-ACT-R70"
+        ]
+      ]
+    },
+    {
+      "sc": "2.4.3",
+      "allOf": [
+        [
+          "lynx",
+          "LeftChoice"
+        ]
+      ]
+    },
+    {
+      "sc": "2.4.3",
+      "allOf": [
+        [
+          "lynx",
+          "Opposite"
+        ]
+      ]
+    },
+    {
+      "sc": "2.4.3",
+      "allOf": [
+        [
+          "lynx",
+          "Skip"
+        ]
+      ]
+    },
+    {
+      "sc": "2.4.3",
+      "allOf": [
+        [
+          "lynx",
+          "VerticalAscent"
+        ]
+      ]
+    },
+    {
+      "sc": "2.4.4",
+      "allOf": [
+        [
+          "alfa",
+          "sia-r11"
+        ]
+      ]
+    },
+    {
+      "sc": "2.4.4",
+      "allOf": [
+        [
+          "axe",
+          "area-alt"
+        ]
+      ]
+    },
+    {
+      "sc": "2.4.4",
+      "allOf": [
+        [
+          "axe",
+          "link-name"
+        ]
+      ]
+    },
+    {
+      "sc": "2.4.4",
+      "allOf": [
+        [
+          "ed11y",
+          "LINK_EMPTY"
+        ]
+      ]
+    },
+    {
+      "sc": "2.4.4",
+      "allOf": [
+        [
+          "ed11y",
+          "LINK_EMPTY_NO_LABEL"
+        ]
+      ]
+    },
+    {
+      "sc": "2.4.4",
+      "allOf": [
+        [
+          "ibm",
+          "a_text_purpose"
+        ]
+      ]
+    },
+    {
+      "sc": "2.4.4",
+      "allOf": [
+        [
+          "qualweb",
+          "QW-ACT-R12"
+        ]
+      ]
+    },
+    {
+      "sc": "2.4.4",
+      "allOf": [
+        [
+          "qualweb",
+          "QW-WCAG-T1"
+        ]
+      ]
+    },
+    {
+      "sc": "2.4.4",
+      "allOf": [
+        [
+          "qualweb",
+          "QW-WCAG-T21"
+        ]
+      ]
+    },
+    {
+      "sc": "2.4.7",
+      "allOf": [
+        [
+          "bagel",
+          "adjacentContrast"
+        ]
+      ]
+    },
+    {
+      "sc": "2.4.7",
+      "allOf": [
+        [
+          "bagel",
+          "contrastingArea"
+        ]
+      ]
+    },
+    {
+      "sc": "2.4.7",
+      "allOf": [
+        [
+          "bagel",
+          "minimumArea"
+        ]
+      ]
+    },
+    {
+      "sc": "2.4.7",
+      "allOf": [
+        [
+          "qualweb",
+          "QW-WCAG-T24"
+        ]
+      ]
+    }
+  ],
+  "optimal": true,
+  "certificate": [
+    {
+      "iteration": 0,
+      "f1": 0.45,
+      "status": 0,
+      "mipGap": 0.0
+    },
+    {
+      "iteration": 1,
+      "f1": 0.452991452991453,
+      "status": 0,
+      "mipGap": 0.0
+    },
+    {
+      "iteration": 2,
+      "f1": 0.452991452991453,
+      "status": 0,
+      "mipGap": 0.0
+    }
+  ],
+  "searchScope": "All SC-local monotone Boolean formulas of observed native rule signals; conjunction order is unrestricted; zero-alert profiles remain unflagged"
+}

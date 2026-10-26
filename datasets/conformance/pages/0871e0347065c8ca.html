@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Object label — Lacquer writing box · Eastfield Museum of Asian Art</title>
+<style>
+  :root { --ink: #20211c; --accent: #6b4f1d; }
+  body { font-family: "Iowan Old Style", Georgia, serif; margin: 0; color: var(--ink);
+         background: #f4f1ea; line-height: 1.7; }
+  .site-bar { background: #20211c; color: #f4f1ea; padding: 12px 24px;
+              font-family: "Helvetica Neue", Arial, sans-serif; font-size: 14px; letter-spacing: .04em; }
+  main { max-width: 660px; margin: 28px auto; padding: 0 24px; }
+  h1 { font-size: 25px; margin: 0 0 2px; }
+  .object-meta { color: #6f6a5d; font-size: 14px; font-family: Arial, sans-serif; margin: 0 0 22px; }
+  p { font-size: 17px; }
+
+  .glossary { position: relative; display: inline; }
+  .term {
+    color: var(--accent); font-weight: 600; cursor: help; background: none;
+    border: 0; padding: 0; font: inherit;
+    border-bottom: 2px dotted var(--accent);
+  }
+  .term:focus-visible { outline: 3px solid #1466d6; outline-offset: 2px; border-radius: 2px; }
+
+  .defn {
+    position: absolute; inset-inline-start: -6px; top: -0.35em; transform: translateY(0);
+    width: 320px; z-index: 8;
+    background: #fffdf7; border: 1px solid #d9cfb6; border-left: 4px solid var(--accent);
+    border-radius: 6px; padding: 12px 14px 13px; font-size: 14px; line-height: 1.5;
+    font-family: Arial, sans-serif; box-shadow: 0 10px 26px rgba(0,0,0,.18);
+    display: none;
+  }
+  .defn::before {
+    content: ""; position: absolute; left: 0; right: 0; top: -1.4em; height: 1.4em;
+    background: transparent;
+  }
+  .glossary.open .defn { display: block; }
+  .defn b { color: var(--accent); }
+  .defn .src { color: #6f6a5d; font-style: italic; display: block; margin-top: 6px; }
+  .note { font-size: 12px; color: #807a6c; font-family: Arial, sans-serif; margin-top: 28px;
+          border-top: 1px dashed #ddd3bf; padding-top: 12px; }
+</style>
+</head>
+<body>
+<div class="site-bar">EASTFIELD MUSEUM OF ASIAN ART · Gallery 7 — Lacquer &amp; Inlay</div>
+<main>
+  <h1>Writing box (suzuribako)</h1>
+  <p class="object-meta">Japan, Edo period, 18th century · Wood, lacquer, gold and silver
+     <span class="glossary"><button type="button" class="term" id="term"
+        aria-describedby="defn">maki-e</button><span class="defn" id="defn" role="tooltip">
+        <b>maki-e</b> ("sprinkled picture") — a decorative technique in which metal
+        powder is sprinkled onto wet lacquer to form a design, then sealed under
+        further coats and polished.
+        <span class="src">Eastfield Museum, Gallery 7 didactics.</span></span></span>
+     inlay</p>
+
+  <p>This box held the ink stone, brushes, and water dropper used for calligraphy.
+     Its lid depicts autumn grasses bending under a low moon, a seasonal motif
+     prized by Edo collectors for its restraint.</p>
+
+  <p>The interior trays are fitted to the implements they carried, so each piece
+     returns to its place when the box is closed.</p>
+
+  <p class="note">PASS counter-fixture. The "maki-e" term opens a definition popup on
+     hover AND on keyboard focus. The popup overlaps the trigger's line and the
+     paragraph below it (so Method 1 "don't obscure" is NOT relied upon). It is (a)
+     <strong>Hoverable</strong> — the popup carries its own pointer listeners and overlaps
+     the trigger with no dead gap, so the pointer can travel onto it without it closing;
+     (b) <strong>Dismissible</strong> — a document-level Escape hides it while focus STAYS
+     on the trigger, and activating the trigger toggles it closed; (c) <strong>Persistent</strong>
+     — it never auto-closes on a timer. This is the passing case the five failing siblings
+     are read against.</p>
+</main>
+
+<script>
+  var wrap = document.querySelector('.glossary');
+  var term = document.getElementById('term');
+  var defn = document.getElementById('defn');
+
+  var closeTimer = null;
+  var dismissed = false;          
+  function open()  { clearTimeout(closeTimer); wrap.classList.add('open'); }
+  function close() { clearTimeout(closeTimer); wrap.classList.remove('open'); }
+  function openUnlessDismissed() { if (!dismissed) open(); }
+  function scheduleClose() {
+    clearTimeout(closeTimer);
+    closeTimer = setTimeout(function () {
+      if (!wrap.matches(':hover') && document.activeElement !== term) close();
+    }, 120);
+  }
+
+  wrap.addEventListener('mouseenter', function () { dismissed = false; open(); });
+  wrap.addEventListener('mouseleave', scheduleClose);
+  term.addEventListener('focus', openUnlessDismissed);
+  term.addEventListener('blur', function () { dismissed = false; scheduleClose(); });
+
+  term.addEventListener('click', function () {
+    if (wrap.classList.contains('open')) { dismissed = true; close(); }
+    else { dismissed = false; open(); }
+    term.focus();   
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if ((e.keyCode || e.which) === 27) {  
+      dismissed = true;   
+      close();
+    }
+  });
+</script>
+</body>
+</html>

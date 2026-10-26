@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Rivermark Conservancy — Make a donation</title>
+<style>
+  body { font-family: "Helvetica Neue", Arial, sans-serif; background: #f1f6f3; color: #243b30; margin: 0; }
+  .give { max-width: 580px; margin: 40px auto; background: #fff; border-radius: 10px; box-shadow: 0 2px 14px rgba(20,60,40,.1); padding: 32px 38px 40px; }
+  .org { color: #2f7d4f; font-weight: bold; letter-spacing: .04em; font-size: 13px; }
+  h1 { font-size: 23px; margin: 4px 0 6px; }
+  .lead { color: #4f6a5c; font-size: 14px; line-height: 1.5; margin-bottom: 8px; }
+  .req-note { font-size: 13px; color: #5a4a1f; background: #fbf4e0; border: 1px solid #ecdca6; padding: 8px 12px; border-radius: 4px; margin: 14px 0 24px; }
+  fieldset { border: 1px solid #cfe0d6; border-radius: 8px; margin: 0 0 22px; padding: 12px 16px 16px; }
+  legend { font-weight: 600; font-size: 15px; padding: 0 6px; }
+  .opt { display: flex; align-items: center; gap: 9px; padding: 6px 0; font-size: 15px; }
+  .field { margin-bottom: 20px; }
+  .field label { display: block; font-size: 14px; margin-bottom: 5px; }
+  .reqmark { color: #b3261e; font-weight: 600; }
+  input[type=text], input[type=email] { width: 100%; box-sizing: border-box; padding: 9px 10px; border: 1px solid #c2d4ca; border-radius: 4px; font-size: 14px; }
+  [role=radiogroup] { border: 1px solid #cfe0d6; border-radius: 8px; padding: 12px 16px 16px; margin-bottom: 22px; }
+  .rg-q { font-weight: 600; font-size: 15px; margin: 0 0 8px; }
+  .phone { display: flex; gap: 8px; align-items: center; }
+  .phone input { text-align: center; }
+  .phone .area { flex: .8; } .phone .pre { flex: .8; } .phone .line { flex: 1.1; }
+  .donate { background: #2f7d4f; color: #fff; border: none; border-radius: 6px; padding: 13px 32px; font-size: 15px; cursor: pointer; margin-top: 6px; }
+</style>
+<style>
+:focus { outline:4px double #17442d !important; outline-offset:3px !important; box-shadow:0 0 0 3px #fff !important; }
+</style></head>
+<body id="page">
+<div class="give">
+<p class="org">Rivermark Conservancy</p>
+<h1>Make a donation</h1>
+<p class="lead">Your gift protects 4,200 acres of river habitat. Thank you.</p>
+<p class="req-note" id="reqNote">Fields marked “(required)” must be completed before you submit.</p>
+<form action="#" method="post" novalidate="">
+<div class="field">
+<label for="email">Email for your receipt <span class="reqmark">(required)</span></label>
+<input aria-describedby="reqNote" aria-required="true" autocomplete="email" id="email" type="email"/>
+</div>
+<fieldset>
+<legend>Gift frequency <span class="reqmark">(required)</span></legend>
+<div class="opt"><input aria-required="true" id="f1" name="freq" type="radio" value="once"/><label for="f1">One-time gift</label></div>
+<div class="opt"><input aria-required="true" id="f2" name="freq" type="radio" value="monthly"/><label for="f2">Monthly</label></div>
+<div class="opt"><input aria-required="true" id="f3" name="freq" type="radio" value="annual"/><label for="f3">Annually</label></div>
+</fieldset>
+<div aria-labelledby="desigQ" role="radiogroup">
+<p class="rg-q" id="desigQ">Designate your gift</p>
+<div class="opt"><input id="d1" name="desig" type="radio" value="general"/><label for="d1">Where most needed</label></div>
+<div class="opt"><input id="d2" name="desig" type="radio" value="trails"/><label for="d2">Trail restoration</label></div>
+<div class="opt"><input id="d3" name="desig" type="radio" value="water"/><label for="d3">Water-quality monitoring</label></div>
+</div>
+<div aria-labelledby="phoneQ" class="field" role="group">
+<span id="phoneQ" style="display:block; font-size:14px; margin-bottom:5px;">Daytime phone (optional)</span>
+<div class="phone">
+<input aria-describedby="phoneQ" class="area" id="item8" inputmode="numeric" maxlength="3" title="Area code" type="text"/>
+<span aria-hidden="true">–</span>
+<input aria-describedby="phoneQ" class="pre" id="item9" inputmode="numeric" maxlength="3" title="Prefix" type="text"/>
+<span aria-hidden="true">–</span>
+<input aria-describedby="phoneQ" class="line" id="item10" inputmode="numeric" maxlength="4" title="Line number" type="text"/>
+</div>
+</div>
+<button class="donate" id="item11" type="submit">Donate now</button>
+</form>
+</div>
+</body>
+</html>
+

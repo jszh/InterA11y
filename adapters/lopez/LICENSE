@@ -1,0 +1,62 @@
+MIT License
+
+Copyright (c) 2025 LLM WCAG Compliance Testing Research Team
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+## Additional Terms for Research Use
+
+This repository contains research materials associated with the paper:
+"An Empirical Investigation of Large Language Models for Automated Software 
+Compliance Testing: Evidence from Web Accessibility"
+
+### Data Attribution
+- WCAG test cases are derived from the W3C Accessibility Conformance Testing 
+  (ACT) Rules Community Group dataset, which is available under W3C License.
+- Original ACT Rules: https://act-rules.github.io/
+- W3C Copyright: https://www.w3.org/Consortium/Legal/copyright-documents
+
+### Research Ethics
+- This research was conducted following academic ethical standards
+- No personal data was collected or processed
+- All LLM evaluations used publicly available test cases
+- API usage followed respective providers' terms of service
+
+### Citation Requirement
+If you use this code, data, or methodology in your research, please cite:
+
+```bibtex
+@article{llm_wcag_2025,
+  title={An Empirical Investigation of Large Language Models for Automated Software Compliance Testing: Evidence from Web Accessibility},
+  author={[Authors]},
+  journal={Information and Software Technology},
+  year={2025}
+}
+```
+
+### Commercial Use Disclaimer
+While the code is provided under MIT License for research and educational use, 
+commercial deployment of LLM-based accessibility testing may require:
+- Additional licensing agreements with LLM providers
+- Compliance with accessibility testing standards and regulations
+- Professional validation of results
+- Appropriate human oversight and quality assurance
+
+The authors disclaim any liability for commercial use without proper validation 
+and human oversight.

@@ -1,0 +1,7 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying InterA11y paper."
+title: "InterA11y: Interactive Web Accessibility Error Detection with LLM Agents"
+type: software
+version: 1.0.0
+authors:
+  - name: "Anonymous Author(s)"

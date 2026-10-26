@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Transfer funds — Northbridge Online Banking</title>
+<style>
+  :root { font-family: "Inter", system-ui, sans-serif; color: #11203a; }
+  body { margin: 0; background: #f3f6fb; }
+  header.bank { background: #0a2a5e; color: #fff; padding: 14px 26px; display: flex; align-items: center; justify-content: space-between; }
+  header.bank .brand { font-weight: 700; letter-spacing: .4px; }
+  header.bank nav a { color: #cdddf6; text-decoration: none; margin-left: 18px; font-size: .9rem; }
+  main { max-width: 720px; margin: 0 auto; padding: 26px; }
+  .acct { background: #fff; border: 1px solid #d7e0ee; border-radius: 12px; padding: 18px 22px; margin-bottom: 16px; }
+  .acct h2 { margin: 0 0 4px; font-size: 1rem; }
+  .acct .bal { font-size: 1.5rem; font-weight: 700; color: #0a2a5e; }
+  .backdrop { position: fixed; inset: 0; background: rgba(8,22,46,.55); display: flex; align-items: center; justify-content: center; }
+  .modal { background: #fff; width: min(460px, 92vw); border-radius: 14px; box-shadow: 0 24px 60px rgba(8,22,46,.4); overflow: hidden; }
+  .modal-head { background: #0a2a5e; color: #fff; padding: 16px 22px; }
+  .modal-head h2 { margin: 0; font-size: 1.1rem; }
+  .modal-body { padding: 22px; }
+  .modal-body label { display: block; font-weight: 600; font-size: .85rem; margin: 14px 0 6px; }
+  .modal-body input, .modal-body select { width: 100%; box-sizing: border-box; padding: 10px 12px; border: 1px solid #9cb0cf; border-radius: 8px; font-size: .95rem; }
+  .modal-foot { padding: 16px 22px 22px; display: flex; gap: 10px; justify-content: flex-end; }
+  .btn { border: none; border-radius: 8px; padding: 11px 20px; font-size: .92rem; font-weight: 600; cursor: pointer; }
+  .btn.primary { background: #0a6e3a; color: #fff; }
+  .btn.ghost { background: #e7edf7; color: #11203a; }
+</style>
+</head>
+<body>
+<header class="bank">
+  <span class="brand">Northbridge Bank</span>
+  <nav>
+    <a href="#accounts">Accounts</a>
+    <a href="#pay">Pay &amp; Transfer</a>
+    <a href="#logout" id="logout-link">Log out</a>
+  </nav>
+</header>
+
+<main aria-hidden="false">
+  <h1>Pay &amp; Transfer</h1>
+  <div class="acct">
+    <h2>Everyday Checking ····2841</h2>
+    <span class="bal">$4,820.17</span>
+  </div>
+  <div class="acct">
+    <h2>High-Yield Savings ····9930</h2>
+    <span class="bal">$18,206.55</span>
+  </div>
+  <p>Review the transfer below before confirming.</p>
+</main>
+
+<div class="backdrop" id="backdrop">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="cf-title" id="modal">
+    <div class="modal-head"><h2 id="cf-title">Confirm transfer</h2></div>
+    <div class="modal-body">
+      <p>Transfer to <strong>High-Yield Savings ····9930</strong>.</p>
+      <label for="amt">Amount (USD)</label>
+      <input id="amt" name="amt" type="text" inputmode="decimal" value="500.00">
+      <label for="when">Send on</label>
+      <select id="when" name="when">
+        <option>Today</option>
+        <option>Next business day</option>
+      </select>
+    </div>
+    <div class="modal-foot">
+      <button type="button" class="btn ghost" id="cancel">Cancel</button>
+      <button type="button" class="btn primary" id="confirm">Confirm transfer</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById('modal');
+  function focusables() {
+    return Array.from(modal.querySelectorAll('input, select, button')).filter(el => !el.disabled);
+  }
+  modal.addEventListener('keydown', function (e) {
+    if (e.key !== 'Tab') return;
+    const items = focusables();
+    const last = items[items.length - 1];
+    if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      items[0].focus();
+    }
+  });
+  window.addEventListener('load', () => document.getElementById('amt').focus());
+  document.getElementById('cancel').addEventListener('click', () => document.getElementById('backdrop').remove());
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') document.getElementById('backdrop').remove(); });
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Runbook · Checkout latency incident (INC-4821)</title>
+  <style>
+    :root { --ink:#0d1117; --muted:#57606a; --line:#d0d7de; --bg:#f6f8fa; --accent:#0969da; --crit:#cf222e; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif; color:var(--ink); background:var(--bg); }
+    .shell { max-width:880px; margin:0 auto; padding:26px 20px 56px; }
+    .repo { display:flex; align-items:center; gap:10px; font-size:14px; color:var(--muted); }
+    .repo b { color:var(--ink); }
+    h1 { font-size:22px; margin:10px 0 2px; }
+    .badge { display:inline-block; background:#ffebe9; color:var(--crit); border:1px solid #ffcecb; border-radius:20px; padding:2px 10px; font-size:12px; font-weight:600; }
+    .md { background:#fff; border:1px solid var(--line); border-radius:10px; padding:22px; margin-top:18px; line-height:1.65; }
+    .md h2 { font-size:16px; margin:22px 0 8px; padding-bottom:6px; border-bottom:1px solid var(--line); }
+    .md h2:first-child { margin-top:0; }
+    .md p { margin:0 0 12px; }
+    figure { margin:14px 0; }
+    figure img { display:block; width:100%; max-width:720px; height:auto; border:1px solid var(--line); border-radius:8px; }
+    details { margin-top:10px; font-size:13.5px; color:var(--muted); }
+    summary { cursor:pointer; color:var(--accent); }
+    code { background:var(--bg); border:1px solid var(--line); border-radius:4px; padding:1px 5px; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:13px; }
+    ol { margin:0 0 12px 22px; }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <p class="repo">infra-runbooks / <b>checkout-latency.md</b></p>
+    <h1>Checkout latency incident <span class="badge">SEV-2 · ACTIVE</span></h1>
+
+    <article class="md">
+      <h2>Current service health</h2>
+      <p>Snapshot from the platform health board, captured at the start of the page. Triage the
+        down services first, then follow the runbook steps below.</p>
+
+      <figure>
+        <img
+          alt="Service health board for prod-us-east showing eight services as colored tiles, each with its p95 latency: web-frontend, auth-gateway, search-api, cart-service, payments-worker, inventory-db, notify-queue, and cdn-edge. Tiles shown in green are healthy; tiles shown in red are down."
+          aria-describedby="boardDesc"
+          src="data:image/svg+xml;utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='720'%20height='320'%20viewBox='0%200%20720%20320'%3E%3Crect%20width='720'%20height='320'%20fill='%230d1117'/%3E%3Ctext%20x='24'%20y='34'%20font-family='Segoe%20UI,Arial,sans-serif'%20font-size='15'%20fill='%23adbac7'%3EService%20Health%20%E2%80%94%20prod-us-east%3C/text%3E%3Cg%20font-family='Segoe%20UI,Arial,sans-serif'%3E%3Crect%20x='24'%20y='56'%20width='156'%20height='110'%20rx='8'%20fill='%231f7a3d'/%3E%3Ctext%20x='38'%20y='92'%20font-size='14'%20fill='%23ffffff'%3Eweb-frontend%3C/text%3E%3Ctext%20x='38'%20y='140'%20font-size='13'%20fill='%23d6f5e0'%3Ep95%20142ms%3C/text%3E%3Crect%20x='190'%20y='56'%20width='156'%20height='110'%20rx='8'%20fill='%23c22b27'/%3E%3Ctext%20x='204'%20y='92'%20font-size='14'%20fill='%23ffffff'%3Eauth-gateway%3C/text%3E%3Ctext%20x='204'%20y='140'%20font-size='13'%20fill='%23ffe1de'%3Ep95%20118ms%3C/text%3E%3Crect%20x='356'%20y='56'%20width='156'%20height='110'%20rx='8'%20fill='%231f7a3d'/%3E%3Ctext%20x='370'%20y='92'%20font-size='14'%20fill='%23ffffff'%3Esearch-api%3C/text%3E%3Ctext%20x='370'%20y='140'%20font-size='13'%20fill='%23d6f5e0'%3Ep95%2098ms%3C/text%3E%3Crect%20x='522'%20y='56'%20width='156'%20height='110'%20rx='8'%20fill='%231f7a3d'/%3E%3Ctext%20x='536'%20y='92'%20font-size='14'%20fill='%23ffffff'%3Ecart-service%3C/text%3E%3Ctext%20x='536'%20y='140'%20font-size='13'%20fill='%23d6f5e0'%3Ep95%20176ms%3C/text%3E%3Crect%20x='24'%20y='176'%20width='156'%20height='110'%20rx='8'%20fill='%23c22b27'/%3E%3Ctext%20x='38'%20y='212'%20font-size='14'%20fill='%23ffffff'%3Epayments-worker%3C/text%3E%3Ctext%20x='38'%20y='260'%20font-size='13'%20fill='%23ffe1de'%3Ep95%20131ms%3C/text%3E%3Crect%20x='190'%20y='176'%20width='156'%20height='110'%20rx='8'%20fill='%231f7a3d'/%3E%3Ctext%20x='204'%20y='212'%20font-size='14'%20fill='%23ffffff'%3Einventory-db%3C/text%3E%3Ctext%20x='204'%20y='260'%20font-size='13'%20fill='%23d6f5e0'%3Ep95%2061ms%3C/text%3E%3Crect%20x='356'%20y='176'%20width='156'%20height='110'%20rx='8'%20fill='%231f7a3d'/%3E%3Ctext%20x='370'%20y='212'%20font-size='14'%20fill='%23ffffff'%3Enotify-queue%3C/text%3E%3Ctext%20x='370'%20y='260'%20font-size='13'%20fill='%23d6f5e0'%3Ep95%20154ms%3C/text%3E%3Crect%20x='522'%20y='176'%20width='156'%20height='110'%20rx='8'%20fill='%231f7a3d'/%3E%3Ctext%20x='536'%20y='212'%20font-size='14'%20fill='%23ffffff'%3Ecdn-edge%3C/text%3E%3Ctext%20x='536'%20y='260'%20font-size='13'%20fill='%23d6f5e0'%3Ep95%2033ms%3C/text%3E%3C/g%3E%3C/svg%3E">
+        <details>
+          <summary>Text description of the health board</summary>
+          <p id="boardDesc">
+            The board shows eight production services in the us-east region as a grid of tiles.
+            Healthy services are shown with a green tile; services that are down are shown with a
+            red tile. Each tile lists the service and its p95 latency. The eight services and their
+            current p95 latencies are: web-frontend (142ms), auth-gateway (118ms), search-api
+            (98ms), cart-service (176ms), payments-worker (131ms), inventory-db (61ms),
+            notify-queue (154ms), and cdn-edge (33ms). Two of the eight services are currently down.
+          </p>
+        </details>
+      </figure>
+
+      <h2>Runbook</h2>
+      <ol>
+        <li>Page the on-call owner of each <em>down</em> service shown above.</li>
+        <li>Confirm the dependency: checkout fails closed if either down service is unavailable.</li>
+        <li>Failover per <code>infra-runbooks/failover.md</code> and post status to #incidents.</li>
+      </ol>
+    </article>
+  </div>
+</body>
+</html>

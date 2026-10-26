@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SNAP renewal — Step 2 of 4 · State Benefits Online</title>
+<style>
+  :root { --ink:#1a1f26; --muted:#586170; --line:#b9c2cc; --gov:#1b4a8a; --govdk:#0e2e57; }
+  * { box-sizing:border-box; }
+  body { margin:0; font:16px/1.55 "Public Sans","Segoe UI",sans-serif; color:var(--ink); background:#f4f6f9; }
+  .gbar { background:var(--govdk); color:#cdd9ea; font-size:.78rem; padding:5px 26px; }
+  header { background:var(--gov); color:#fff; padding:18px 26px; }
+  header h1 { margin:0; font-size:1.25rem; } header p { margin:3px 0 0; opacity:.92; font-size:.88rem; }
+  .steps { background:#fff; border-bottom:1px solid var(--line); padding:10px 26px; font-size:.82rem; color:var(--muted); }
+  main { max-width:660px; margin:24px auto 64px; background:#fff; border:1px solid var(--line);
+         border-radius:8px; padding:26px 30px 32px; }
+  h2 { font-size:1.1rem; margin:0 0 4px; } .lede { color:var(--muted); margin:0 0 22px; font-size:.92rem; }
+
+  .banner { background:#fbe9e9; border:1px solid #eeb6b6; color:#7c1b1b; border-radius:6px;
+            padding:10px 12px; font-size:.9rem; margin-bottom:20px; }
+
+  .field { margin-bottom:18px; }
+  label { display:block; font-weight:600; font-size:.86rem; margin:0 0 6px; }
+  .help { font-size:.8rem; color:var(--muted); margin:0 0 6px; }
+  input, select { width:100%; padding:10px 12px; font-size:1rem; border:2px solid var(--line);
+                  border-radius:6px; background:#fff; color:var(--ink); }
+  input:focus, select:focus { outline:2px solid var(--gov); outline-offset:1px; }
+
+  [aria-invalid="true"] { border-color:#d11f1f; }
+
+  button { padding:11px 22px; font-size:1rem; font-weight:700; color:#fff; background:#1f7a3d;
+           border:0; border-radius:6px; cursor:pointer; }
+  .save { background:transparent; color:var(--gov); border:1px solid var(--gov); margin-left:10px; }
+  footer { max-width:660px; margin:0 auto; padding:0 4px 30px; color:var(--muted); font-size:.78rem; }
+</style>
+</head>
+<body>
+<div class="gbar">An official application of the State of Jefferson · Secure · file://</div>
+<header>
+  <h1>SNAP Benefits Renewal</h1>
+  <p>State Benefits Online · Case #JF-7741-2</p>
+</header>
+<div class="steps">Step 2 of 4 — Household details</div>
+
+<main>
+  <h2>Tell us about your household</h2>
+  <p class="lede">We use this to recalculate your monthly allotment. Answers must match your case file.</p>
+
+  <div class="banner" role="alert">We found a problem with your submission. Please review your answers.</div>
+
+  <form action="#" method="post" novalidate>
+    <div class="field">
+      <label for="adults">Number of adults in household</label>
+      <p class="help">Count everyone 18 or older who buys and prepares food together.</p>
+      <input id="adults" name="adults" type="number" min="0" value="2">
+    </div>
+
+    <div class="field">
+      <label for="children">Number of children in household</label>
+      <p class="help">Count everyone under 18 in the home.</p>
+      <input id="children" name="children" type="number" min="0" value=""
+             aria-invalid="true">
+    </div>
+
+    <div class="field">
+      <label for="income">Total monthly household income (USD)</label>
+      <p class="help">Before taxes, from all sources.</p>
+      <input id="income" name="income" type="number" min="0" value="2840">
+    </div>
+
+    <div class="field">
+      <label for="county">County</label>
+      <select id="county" name="county"><option selected>Marion</option><option>Linn</option><option>Polk</option></select>
+    </div>
+
+    <button type="submit">Continue to Step 3</button>
+    <button type="button" class="save">Save and finish later</button>
+  </form>
+</main>
+<footer>State Benefits Online · If you need help, call 1-800-555-0199 (TTY 711) · Renders from file://</footer>
+</body>
+</html>

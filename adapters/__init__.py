@@ -1,0 +1,1 @@
+"""Native accessibility checker adapters."""

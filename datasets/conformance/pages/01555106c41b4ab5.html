@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sumi Tanaka — Portfolio</title>
+  <style>
+    :root { --ink:#161616; --muted:#6b6b6b; --accent:#7b2ff7; --rule:#ececec; --bg:#ffffff; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Helvetica Neue", Arial, sans-serif; color:var(--ink); background:var(--bg); line-height:1.6; }
+    .hero { max-width:760px; margin:0 auto; padding:4rem 1.4rem 2rem; text-align:center; }
+    .avatar { width:104px; height:104px; border-radius:50%; margin:0 auto 1.2rem; background:radial-gradient(circle at 30% 30%, #d7b8ff, #7b2ff7); }
+    .hero h1 { font-size:2.4rem; margin:.2rem 0 .3rem; font-weight:500; }
+    .hero .role { font-size:1.15rem; color:var(--muted); margin:0 0 1.2rem; }
+    .links { display:flex; gap:.7rem; justify-content:center; flex-wrap:wrap; margin-bottom:1.4rem; }
+    .links a { text-decoration:none; border:1px solid var(--rule); border-radius:999px; padding:.45rem 1rem; font-size:.9rem; color:var(--ink); }
+    .links a.primary { background:var(--accent); color:#fff; border-color:var(--accent); }
+    main { max-width:760px; margin:0 auto; padding:1rem 1.4rem 4rem; }
+    h2 { font-size:1.3rem; }
+    .work { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; margin-top:1rem; }
+    .tile { aspect-ratio:4/3; border-radius:12px; background:linear-gradient(135deg,#efe6ff,#cdb4ff); display:flex; align-items:flex-end; padding:.8rem; font-size:.85rem; color:#4a2a7a; font-weight:600; }
+    footer { border-top:1px solid var(--rule); text-align:center; padding:1.4rem; font-size:.82rem; color:var(--muted); }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="avatar" role="img" aria-label="Sumi Tanaka, portrait"></div>
+    <h1>&#x1D5E6;&#x1D602;&#x1D5FA;&#x1D5F6; &#x1D5E7;&#x1D5EE;&#x1D5FB;&#x1D5EE;&#x1D5F8;&#x1D5EE;</h1>
+    <p class="role">&#x1D60E;&#x1D622;&#x1D634;&#x1D626;&#x1D624;&#x1D625;&#x1D622;&#x1D62F; &amp; &#x1D613;&#x1D62B;&#x1D62B;&#x1D636;&#x1D634;&#x1D635;&#x1D62F;&#x1D622;&#x1D62D;&#x1D626;&#x1D627;</p>
+
+    <div class="links">
+      <a class="primary" href="#work">View work</a>
+      <a href="mailto:hello@example.com">Email me</a>
+      <a href="#about">About</a>
+    </div>
+  </section>
+
+  <main id="work">
+    <h2>Selected work</h2>
+    <div class="work">
+      <div class="tile">Editorial covers — Kinfolk Press</div>
+      <div class="tile">Packaging — Yuzu Soda Co.</div>
+      <div class="tile">Brand system — Northwind Outdoors</div>
+      <div class="tile">Children's book — "The Lantern Fox"</div>
+    </div>
+    <h2 id="about" style="margin-top:2.4rem;">About</h2>
+    <p>I'm a Tokyo- and Vancouver-based illustrator working in editorial, packaging, and picture books. I love warm palettes, hand-lettering, and stories about small brave animals. Open to freelance and licensing inquiries.</p>
+  </main>
+
+  <footer>© 2026 · Built with love and too much coffee.</footer>
+</body>
+</html>

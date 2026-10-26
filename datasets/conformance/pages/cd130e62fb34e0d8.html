@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Tideline Review — Long-form journalism</title>
+<style>
+  :root { font-family: Georgia, "Times New Roman", serif; color: #20242b; }
+  body { margin: 0; background: #fffdf8; }
+  header.pub { border-bottom: 2px solid #20242b; padding: 16px 30px; display: flex; align-items: center; justify-content: space-between; }
+  header.pub .masthead { font-size: 1.6rem; font-weight: 700; letter-spacing: .5px; }
+  .archive-search { display: flex; gap: 8px; }
+  .archive-search input { padding: 8px 12px; border: 1px solid #8a8f98; border-radius: 6px; font: inherit; width: 220px; }
+  .archive-search button { padding: 8px 14px; border: none; background: #20242b; color: #fff; border-radius: 6px; font: inherit; cursor: pointer; }
+  main { max-width: 680px; margin: 0 auto; padding: 30px; line-height: 1.7; }
+  main h1 { font-size: 2rem; line-height: 1.2; }
+  main p { font-size: 1.05rem; }
+  .byline { color: #5b606a; font-style: italic; }
+  .scrim { position: fixed; inset: 0; background: rgba(20,24,30,.6); display: flex; align-items: center; justify-content: center; }
+  .promo { background: #fffdf8; width: min(420px, 90vw); border-radius: 6px; padding: 26px; box-shadow: 0 18px 50px rgba(0,0,0,.4); text-align: center; }
+  .promo h2 { margin-top: 0; font-size: 1.4rem; }
+  .promo p { color: #444; font-size: .95rem; }
+  .promo .row { display: flex; gap: 8px; margin-top: 14px; }
+  .promo input { flex: 1; padding: 11px 12px; border: 1px solid #8a8f98; border-radius: 6px; font: inherit; }
+  .promo button { padding: 11px 18px; border: none; background: #b8431f; color: #fff; border-radius: 6px; font: inherit; font-weight: 700; cursor: pointer; }
+</style>
+</head>
+<body>
+<header class="pub">
+  <span class="masthead">The Tideline Review</span>
+  <form class="archive-search" role="search" action="#results">
+    <label for="q" class="sr-only" style="position:absolute;left:-9999px">Search the archive</label>
+    <input id="q" name="q" type="search" placeholder="Search the archive">
+    <button id="q-go" type="submit">Search</button>
+  </form>
+</header>
+
+<main>
+  <article>
+    <h1>The slow return of the salt marsh</h1>
+    <p class="byline">By Marisol Quenby · 18 min read</p>
+    <p>For a century the estuary was diked, drained, and forgotten. Then a single broken
+       culvert let the tide back in, and the marsh began to remember what it had been.</p>
+    <p>Restoration ecologists now argue that the cheapest climate infrastructure may be the
+       land we already ruined — if only we let the water decide where to go.</p>
+    <p>The rest of this feature continues below the fold, but first the editors would like
+       you to subscribe.</p>
+  </article>
+</main>
+
+<div class="scrim" id="scrim">
+  <section class="promo" id="promo" aria-label="Newsletter signup">
+    <h2>Read without limits</h2>
+    <p>Join 40,000 readers. One thoughtful story in your inbox each morning.</p>
+    <div class="row">
+      <label for="news-email" style="position:absolute;left:-9999px">Email address</label>
+      <input id="news-email" type="email" placeholder="you@example.com">
+      <button id="news-sub" type="button">Subscribe</button>
+    </div>
+  </section>
+</div>
+
+<script>
+  window.addEventListener('load', () => document.getElementById('news-email').focus());
+  document.getElementById('news-sub').addEventListener('click', () => {
+    document.getElementById('news-sub').textContent = 'Subscribed ✓';
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') document.getElementById('scrim').remove();
+  });
+</script>
+</body>
+</html>

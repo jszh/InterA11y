@@ -1,0 +1,36 @@
+{
+  "name": "intera11y-replication",
+  "version": "1.0.0",
+  "private": true,
+  "description": "InterA11y replication package",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "puppeteer": "24.40.0",
+    "@guidepup/virtual-screen-reader": "0.32.1",
+    "axe-core": "4.12.1",
+    "axe-core-intera11y": "npm:axe-core@4.10.3",
+    "html_codesniffer": "2.5.1",
+    "accessibility-checker": "4.0.26",
+    "@qualweb/core": "0.8.11",
+    "@qualweb/act-rules": "0.8.0",
+    "@qualweb/wcag-techniques": "0.4.7",
+    "@qualweb/best-practices": "0.7.12",
+    "@siteimprove/alfa-rules": "0.117.0",
+    "@siteimprove/alfa-act": "0.117.0",
+    "@siteimprove/alfa-dom": "0.117.0",
+    "@siteimprove/alfa-puppeteer": "0.84.0",
+    "playwright": "1.64.0",
+    "playwright-dompath": "0.0.7",
+    "pixelmatch": "8.0.0",
+    "pngjs": "7.0.0",
+    "vnu-jar": "26.10.12",
+    "testaro-issues": "1.1.6",
+    "parse5": "8.0.0",
+    "@essentialaccessibility/aslint": "0.0.58",
+    "aslint-testaro": "1.0.1",
+    "esbuild": "0.25.12"
+  }
+}

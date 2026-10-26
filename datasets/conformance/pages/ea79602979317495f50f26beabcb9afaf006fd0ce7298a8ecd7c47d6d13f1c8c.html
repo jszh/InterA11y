@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Choose a showtime — Rivoli Cinema</title>
+<style>
+  body { margin:0; font:15px/1.5 "Helvetica Neue",Arial,sans-serif; color:#16181d; background:#0e0f12; }
+  .stage { max-width:560px; margin:0 auto; padding:30px 22px 70px; }
+  .film { background:#fff; border-radius:14px; padding:22px 24px; }
+  .film h1 { font-size:21px; margin:0 0 2px; }
+  .film .rating { color:#5b6168; font-size:13px; margin:0 0 18px; }
+  fieldset { border:none; margin:0 0 18px; padding:0; }
+  legend { font-weight:700; font-size:13px; text-transform:uppercase; letter-spacing:.06em;
+           color:#5b6168; margin-bottom:10px; }
+  .times { display:flex; flex-wrap:wrap; gap:10px; }
+  .pill { display:inline-block; }
+  .pill input { position:absolute; opacity:0; width:1px; height:1px; }
+  .pill label { display:inline-block; padding:9px 16px; border:2px solid #1d2330;
+                border-radius:999px; color:#1d2330; background:#fff; cursor:pointer;
+                font-variant-numeric:tabular-nums; }
+  .pill input:checked + label { color:#fff; background:#1d2330; }   
+  .pill input:focus-visible + label { outline:3px solid #2f6df6; outline-offset:2px; }
+  .pill.sold label { color:#9aa0a8; border-color:#d7dade; cursor:not-allowed; text-decoration:line-through; }
+  .hall { margin-top:6px; color:#5b6168; font-size:13px; }
+  button { margin-top:14px; padding:12px 22px; font:inherit; font-weight:700; color:#fff;
+           background:#c4122f; border:none; border-radius:10px; cursor:pointer; }
+</style>
+<style>
+:focus { outline:3px double #171c27 !important; outline-offset:3px !important; box-shadow:0 0 0 3px #fff !important; }
+.pill input:focus + label { outline:3px double #171c27 !important; outline-offset:3px !important; box-shadow:0 0 0 3px #fff !important; }
+</style></head>
+<body id="page">
+<main class="stage">
+<section class="film">
+<h1>The Cartographer's Dream</h1>
+<p class="rating">PG-13 · 2h 04m · Dolby Atmos</p>
+<form>
+<fieldset>
+<legend>Friday 20 June — choose a showtime</legend>
+<div class="times">
+<span class="pill"><input id="t1" name="show" type="radio" value="1010"/><label for="t1">10:10</label></span>
+<span class="pill"><input id="t2" name="show" type="radio" value="1245"/><label for="t2">12:45</label></span>
+<span class="pill"><input checked="" id="t3" name="show" type="radio" value="1530"/><label for="t3">15:30</label></span>
+<span class="pill sold"><input disabled="" id="t4" name="show" type="radio" value="1815"/><label for="t4">18:15</label></span>
+<span class="pill"><input id="t5" name="show" type="radio" value="2050"/><label for="t5">20:50</label></span>
+</div>
+<p class="hall">Screen 3 · recliner seating. Sold-out times are struck through and
+           greyed; the time you have selected is shown reversed (white on dark).</p>
+</fieldset>
+<button id="item6" type="submit">Continue to seats</button>
+</form>
+</section>
+</main>
+</body>
+</html>
+

@@ -1,0 +1,8 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><title>Keyboard navigation fixture</title>
+<style>body { font: 18px system-ui; padding: 40px; } select, a { margin: 20px; }</style>
+<body>
+<label>Language <select id="language"><option>English</option><option>French</option></select></label>
+<a href="focus-visible.html">Continue</a>
+<script>document.getElementById('language').addEventListener('keydown', event => { if (event.key === 'ArrowDown') location.href = 'focus-visible.html'; });</script>
+</body></html>

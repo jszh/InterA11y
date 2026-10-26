@@ -1,0 +1,32 @@
+{
+  "conformance": {
+    "cases": 682,
+    "positive": 316,
+    "negative": 366,
+    "sources": {
+      "ACT": 223,
+      "InterA11y": 459
+    }
+  },
+  "expert": {
+    "cases": 197,
+    "positive": 107,
+    "negative": 90
+  },
+  "prediction_rows": {
+    "conformance": 27280,
+    "expert": 7880
+  },
+  "criteria": [
+    "1.1.1",
+    "1.4.1",
+    "1.4.13",
+    "2.1.1",
+    "2.1.2",
+    "2.4.3",
+    "2.4.4",
+    "2.4.7",
+    "3.3.1",
+    "4.1.3"
+  ]
+}
